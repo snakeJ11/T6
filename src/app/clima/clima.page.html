@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Clima</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="weatherData" class="card-with-background">
+    <ion-card-header>
+      Clima en República Dominicana
+    </ion-card-header>
+    <ion-card-content>
+      <div style="background-image: url('assets/nube.jpg'); background-size: contain; color: rgba(0, 0, 0, 0.727);">
+        <p>Temperatura: {{ weatherData.main.temp }}°C</p>
+        <p>Descripción: {{ weatherData.weather[0].description }}</p>
+        <p>Humedad: {{ weatherData.main.humidity }}%</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

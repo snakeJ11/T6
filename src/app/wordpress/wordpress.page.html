@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Wordpress</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="site-container">
+    <img src="assets/logo_b.jpeg" alt="logo_b" style="width: 250px; height: 250px">  </div>
+  <div class="news-container" *ngFor="let news of newsData">
+    <div class="news-item">
+      <h2>
+        <a [href]="news.link" target="_blank">{{ news.title.rendered }}</a>
+      </h2>
+      <p [innerHTML]="news.excerpt.rendered"></p>    </div>
+  </div>
+ 
+</ion-content>

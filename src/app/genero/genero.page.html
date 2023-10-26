@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Genero</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-input [(ngModel)]="name" placeholder="Nombre"></ion-input>
+  <ion-button (click)="getGender()">Obtener género</ion-button>
+  <div *ngIf="gender === 'male'" style="text-align: center;">Eres un hombre</div>
+  <div *ngIf="gender === 'female'" style="text-align: center;">Eres una mujer</div>
+  <div *ngIf="gender === 'male'" style="text-align: center;">
+    <img src="assets/hombre.jpg" alt="Imagen masculina" style="width: 200px; height: 200px">
+  </div>
+  <div *ngIf="gender === 'female'" style="text-align: center;">
+    <img src="assets/mujer.jpg" alt="Imagen femenina" style="width: 200px; height: 200px">
+  </div>
+</ion-content>

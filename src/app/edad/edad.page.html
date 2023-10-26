@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Edad</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-input [(ngModel)]="name" placeholder="Nombre"></ion-input>
+  <ion-button (click)="getAge()">Obtener edad</ion-button>
+  
+  <div *ngIf="ageCategory">
+    <ng-container [ngSwitch]="ageCategory">
+      <div *ngSwitchCase="'joven'" style="text-align: center;">
+        <img src="assets/adolecentes.jpg" alt="Joven" style="width: 200px; height: 200px">
+        <p>Es joven, tiene {{ age }} años</p>
+      </div>
+      <div *ngSwitchCase="'adulto'" style="text-align: center;">
+        <img src="assets/adulto.avif" alt="Adulto" style="width: 200px; height: 200px">
+        <p>Es adulto, tiene {{ age }} años</p>
+      </div>
+      <div *ngSwitchCase="'anciano'" style="text-align: center;">
+        <img src="assets/viejos.jpg" alt="Anciano" style="width: 200px; height: 200px">
+        <p>Es anciano, tiene {{ age }} años</p>
+      </div>
+    </ng-container>
+  </div>
+</ion-content>
